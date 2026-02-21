@@ -1,4 +1,4 @@
-# FishVim 1.0 - Hacker's Vim Choice
+# FishVim 2.0 - Hacker's Vim Choice
 
 By Nicholas Fisher
 
@@ -13,6 +13,7 @@ Clone the repo, run one bootstrap script for your OS, then open Neovim.
 ```bash
 cd FishVim1.0
 ./scripts/bootstrap/linux-ubuntu.sh
+mv ~/FishVim2.0/config ~/.config
 nvim
 ```
 
@@ -21,6 +22,7 @@ nvim
 ```bash
 cd FishVim1.0
 ./scripts/bootstrap/macos.sh
+mv ~/FishVim2.0/config ~/.config
 nvim
 ```
 
@@ -30,6 +32,7 @@ nvim
 Set-ExecutionPolicy -Scope Process Bypass
 cd FishVim1.0
 ./scripts/bootstrap/windows.ps1
+mv ~/FishVim2.0/config ~/.config
 nvim
 ```
 
