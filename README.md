@@ -1,5 +1,5 @@
 # FishVim 2.0 - Hacker's Vim Choice
-
+<img width="2322" height="972" alt="image" src="https://github.com/user-attachments/assets/491a21e5-c576-48ee-a054-efc62a8e03b5" />
 By Nicholas Fisher
 
 Quick bootstrap docs: [`scripts/bootstrap/README.md`](scripts/bootstrap/README.md)
