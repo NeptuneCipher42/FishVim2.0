@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="2322" height="972" alt="FishVim 2.0" src="https://github.com/user-attachments/assets/491a21e5-c576-48ee-a054-efc62a8e03b5" />
+<img width="2554" height="1346" alt="image" src="https://github.com/user-attachments/assets/a02bdbd8-1e1c-4b51-8fad-20c02db34b7f" />
 
 <p><strong>The Hacker's Vim Choice</strong></p>
 
