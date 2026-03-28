@@ -56,7 +56,7 @@ Clone the repo, run one bootstrap script for your OS, then open Neovim.
 
 ```bash
 git clone https://github.com/NeptuneCipher42/FishVim2.0.git
-cd FishVim2.0
+cd FishVim2.2
 unzip config.zip
 ./scripts/bootstrap/linux-ubuntu.sh
 mv ~/FishVim2.0/config ~/.config
@@ -67,7 +67,7 @@ nvim
 
 ```bash
 git clone https://github.com/NeptuneCipher42/FishVim2.0.git
-cd FishVim2.0
+cd FishVim2.2
 unzip config.zip
 ./scripts/bootstrap/macos.sh
 mv ~/FishVim2.0/config ~/.config
