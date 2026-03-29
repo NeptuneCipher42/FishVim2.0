@@ -1,5 +1,13 @@
 vim.cmd("let g:netrw_liststyle = 3")
 
+-- Windows: force UTF-8 so Nerd Font glyphs are not mangled by the console code page
+if vim.fn.has("win32") == 1 then
+  vim.opt.encoding     = "utf-8"
+  vim.opt.fileencoding = "utf-8"
+  -- Tell Neovim the host shell is UTF-8 aware (needed when launched from PowerShell)
+  vim.env.PYTHONIOENCODING = "utf-8"
+end
+
 local opt = vim.opt
 
 -- UI

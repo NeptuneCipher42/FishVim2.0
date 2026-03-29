@@ -20,6 +20,7 @@ return {
   },
   config = function()
     local lspconfig      = require("lspconfig")
+    local ic             = require("fisher.core.icons")
     local mason_lspconfig = require("mason-lspconfig")
 
     -- Get blink.cmp extended capabilities (tells servers we support rich completion)
@@ -35,10 +36,10 @@ return {
       virtual_lines    = { current_line = true },
       signs            = {
         text = {
-          [vim.diagnostic.severity.ERROR] = " ",
-          [vim.diagnostic.severity.WARN]  = " ",
-          [vim.diagnostic.severity.HINT]  = "󰠠 ",
-          [vim.diagnostic.severity.INFO]  = " ",
+          [vim.diagnostic.severity.ERROR] = ic.diag.error,
+          [vim.diagnostic.severity.WARN]  = ic.diag.warn,
+          [vim.diagnostic.severity.HINT]  = ic.diag.hint,
+          [vim.diagnostic.severity.INFO]  = ic.diag.info,
         },
       },
       update_in_insert = false,

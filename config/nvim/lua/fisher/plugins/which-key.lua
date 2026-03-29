@@ -5,10 +5,12 @@ return {
     vim.o.timeout    = true
     vim.o.timeoutlen = 400
   end,
-  opts = {
+  opts = function()
+    local ic = require("fisher.core.icons")
+    return {
     preset = "modern",
     delay  = 200,
-    icons  = { group = "󰘳 " },
+    icons  = { group = ic.wk.group },
     spec   = {
       -- Core groups
       { "<leader>f",  group = "Find / Files" },
@@ -53,5 +55,6 @@ return {
       { "]c",         desc = "Next class" },
       { "[c",         desc = "Prev class" },
     },
-  },
+    }
+  end,
 }

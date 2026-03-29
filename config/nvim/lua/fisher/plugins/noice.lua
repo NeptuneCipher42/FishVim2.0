@@ -8,7 +8,9 @@ return {
     "MunifTanjim/nui.nvim",
     "rcarriga/nvim-notify",
   },
-  opts = {
+  opts = function()
+    local ic = require("fisher.core.icons")
+    return {
     cmdline = {
       enabled = true,
       view = "cmdline_popup",   -- floating popup, not inline at bottom
@@ -17,7 +19,7 @@ return {
         search_down = { icon = " " },
         search_up   = { icon = " " },
         filter      = { icon = "$" },
-        lua         = { icon = "" },
+        lua         = { icon = ic.noice.lua },
         help        = { icon = "?" },
       },
     },
@@ -55,7 +57,8 @@ return {
         win_options = { winhighlight = "Normal:Normal,FloatBorder:FloatBorder" },
       },
     },
-  },
+    }
+  end,
   keys = {
     { "<leader>nl", function() require("noice").cmd("last")    end, desc = "Noice: last message" },
     { "<leader>nh", function() require("noice").cmd("history") end, desc = "Noice: message history" },

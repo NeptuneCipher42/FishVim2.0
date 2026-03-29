@@ -5,6 +5,7 @@ return {
   config = function()
     local lualine     = require("lualine")
     local lazy_status = require("lazy.status")
+    local ic          = require("fisher.core.icons")
 
     -- FishVim cyberpunk color palette (matches tokyonight cyberpunk override)
     local colors = {
@@ -40,9 +41,8 @@ return {
       options = {
         theme             = fishvim_theme,
         icons_enabled     = true,
-        -- Nerd Font powerline glyphs (render cleanly in all Nerd Font terminals)
-        component_separators = { left = "", right = "" },
-        section_separators   = { left = "", right = "" },
+        component_separators = { left = ic.sep.comp_left,    right = ic.sep.comp_right },
+        section_separators   = { left = ic.sep.section_left, right = ic.sep.section_right },
         globalstatus      = true,
       },
 
@@ -51,18 +51,18 @@ return {
           { "mode", fmt = string.upper },
         },
         lualine_b = {
-          { "branch", icon = "" },   -- Nerd Font git branch icon
+          { "branch", icon = ic.git.branch },
           { "diff",
-            symbols = { added = " ", modified = " ", removed = " " },
+            symbols = { added = ic.git.added, modified = ic.git.modified, removed = ic.git.removed },
             colored = true,
           },
         },
         lualine_c = {
-          { "filename", path = 1, icon = "" },   -- relative path + file icon
+          { "filename", path = 1, icon = ic.file.generic },
           {
             "diagnostics",
             sources  = { "nvim_diagnostic" },
-            symbols  = { error = " ", warn = " ", info = " ", hint = "󰠠 " },
+            symbols  = { error = ic.diag.error, warn = ic.diag.warn, info = ic.diag.info, hint = ic.diag.hint },
             colored  = true,
           },
         },
@@ -75,7 +75,7 @@ return {
           { "encoding" },
           {
             "fileformat",
-            symbols = { unix = "", dos = "", mac = "" },  -- Nerd Font OS icons
+            symbols = { unix = ic.os.unix, dos = ic.os.dos, mac = ic.os.mac },
           },
           { "filetype" },
         },

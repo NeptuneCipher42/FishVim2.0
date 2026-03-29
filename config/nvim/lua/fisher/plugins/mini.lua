@@ -28,5 +28,11 @@ return {
         return package.loaded["nvim-web-devicons"]
       end
     end,
+    opts = {
+      -- "glyph" uses Nerd Font private-use-area codepoints (requires a Nerd Font
+      -- in your terminal). Set to "ascii" only if icons still don't render after
+      -- installing a Nerd Font and restarting the terminal.
+      style = "glyph",
+    },
   },
 }

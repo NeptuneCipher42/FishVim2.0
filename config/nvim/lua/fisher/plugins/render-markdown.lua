@@ -14,14 +14,16 @@ return {
   cond = function()
     return pcall(vim.treesitter.language.inspect, "markdown")
   end,
-  opts = {
+  opts = function()
+    local ic = require("fisher.core.icons")
+    return {
     enabled = true,
 
     heading = {
       enabled = true,
       sign    = true,
       -- Nerd Font heading icons per level
-      icons   = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
+      icons   = ic.md.headings,
       -- Color headings differently per level
       backgrounds = {
         "RenderMarkdownH1Bg", "RenderMarkdownH2Bg", "RenderMarkdownH3Bg",
@@ -40,16 +42,16 @@ return {
     -- Render bullet list icons
     bullet = {
       enabled = true,
-      icons   = { "●", "○", "◆", "◇" },
+      icons   = ic.md.headings,
     },
 
     -- Checkbox rendering (great for TODO lists)
     checkbox = {
       enabled  = true,
-      unchecked = { icon = "󰄱 ", highlight = "RenderMarkdownUnchecked" },
-      checked   = { icon = "󰱒 ", highlight = "RenderMarkdownChecked" },
+      unchecked = { icon = ic.md.unchecked, highlight = "RenderMarkdownUnchecked" },
+      checked   = { icon = ic.md.checked, highlight = "RenderMarkdownChecked" },
       custom    = {
-        todo = { raw = "[-]", rendered = "󰥔 ", highlight = "RenderMarkdownTodo" },
+        todo = { raw = "[-]", rendered = ic.md.todo, highlight = "RenderMarkdownTodo" },
       },
     },
 
@@ -68,11 +70,11 @@ return {
 
     -- Callouts (> [!NOTE], > [!WARNING], etc.)
     callout = {
-      note    = { raw = "[!NOTE]",    rendered = "󰋽 Note",    highlight = "RenderMarkdownInfo" },
-      tip     = { raw = "[!TIP]",     rendered = "󰌶 Tip",     highlight = "RenderMarkdownSuccess" },
-      warning = { raw = "[!WARNING]", rendered = "󰀪 Warning", highlight = "RenderMarkdownWarn" },
-      caution = { raw = "[!CAUTION]", rendered = "󰳦 Caution", highlight = "RenderMarkdownError" },
-      important = { raw = "[!IMPORTANT]", rendered = "󰅾 Important", highlight = "RenderMarkdownHint" },
+      note    = { raw = "[!NOTE]",    rendered = ic.md.note,    highlight = "RenderMarkdownInfo" },
+      tip     = { raw = "[!TIP]",     rendered = ic.md.tip,     highlight = "RenderMarkdownSuccess" },
+      warning = { raw = "[!WARNING]", rendered = ic.md.warning, highlight = "RenderMarkdownWarn" },
+      caution = { raw = "[!CAUTION]", rendered = ic.md.caution, highlight = "RenderMarkdownError" },
+      important = { raw = "[!IMPORTANT]", rendered = ic.md.important, highlight = "RenderMarkdownHint" },
     },
 
     -- Don't render virtual text on the cursor line (lets you see raw markdown)
@@ -80,7 +82,8 @@ return {
 
     -- Toggle with keymap
     -- Default: <leader>um toggled in the keys below
-  },
+    }
+  end,
   keys = {
     {
       "<leader>um",

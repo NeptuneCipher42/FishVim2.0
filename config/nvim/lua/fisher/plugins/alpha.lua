@@ -5,6 +5,7 @@ return {
   config = function()
     local alpha = require("alpha")
     local dashboard = require("alpha.themes.dashboard")
+    local ic = require("fisher.core.icons")
 
     -- Shark gradient: deep ocean blue (back) → white (belly)
     -- FISHVIM title mirrors the same gradient top→bottom
@@ -74,15 +75,15 @@ return {
     }
 
     dashboard.section.buttons.val = {
-      dashboard.button("e",       "  New file",        "<cmd>ene<CR>"),
-      dashboard.button("SPC ff",  "  Find files",      "<cmd>Telescope find_files<CR>"),
-      dashboard.button("SPC fs",  "󰱼  Live grep",       "<cmd>Telescope live_grep<CR>"),
-      dashboard.button("SPC fp",  "  Projects",        "<cmd>Telescope project<CR>"),
-      dashboard.button("SPC wr",  "  Restore session", "<cmd>SessionRestore<CR>"),
-      dashboard.button("SPC ee",  "  File explorer",   "<cmd>NvimTreeToggle<CR>"),
-      dashboard.button("m",       "󰏔  Mason",           "<cmd>Mason<CR>"),
-      dashboard.button("l",       "󰒲  Lazy",            "<cmd>Lazy<CR>"),
-      dashboard.button("q",       "󰅚  Quit",            "<cmd>qa<CR>"),
+      dashboard.button("e",       ic.dash.new_file .. " New file",       "<cmd>ene<CR>"),
+      dashboard.button("SPC ff",  ic.dash.find     .. " Find files",     "<cmd>Telescope find_files<CR>"),
+      dashboard.button("SPC fs",  ic.dash.grep     .. "Live grep",       "<cmd>Telescope live_grep<CR>"),
+      dashboard.button("SPC fp",  ic.dash.project  .. " Projects",       "<cmd>Telescope project<CR>"),
+      dashboard.button("SPC wr",  ic.dash.session  .. " Restore session","<cmd>SessionRestore<CR>"),
+      dashboard.button("SPC ee",  ic.dash.explorer .. " File explorer",  "<cmd>NvimTreeToggle<CR>"),
+      dashboard.button("m",       ic.dash.mason    .. "Mason",           "<cmd>Mason<CR>"),
+      dashboard.button("l",       ic.dash.lazy     .. "Lazy",            "<cmd>Lazy<CR>"),
+      dashboard.button("q",       ic.dash.quit     .. " Quit",           "<cmd>qa<CR>"),
     }
 
     local function footer()
