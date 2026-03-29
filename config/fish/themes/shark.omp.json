@@ -42,10 +42,17 @@
           },
           "template": " 🌿 {{ .HEAD }}{{ if .Working.Changed }} ~{{ end }}{{ if .Staging.Changed }} +{{ end }} "
         },
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
         {
           "type": "time",
-          "style": "powerline",
-          "powerline_symbol": "\ue0b0",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "trailing_diamond": "\ue0b0",
           "foreground": "#0B1220",
           "background": "#5FD7FF",
           "template": " 🕰️ {{ .CurrentDate | date \"15:04\" }} "
